@@ -1,5 +1,5 @@
 # AI Care Hospital.
-## Live Website Link:
+## Live Website Link:https://ai-care-hospital-react-app.netlify.app/
 
 ## About This Project.
 * This is a Hospital Website.
@@ -8,6 +8,7 @@
 * React Application.
 * React Route.
 * CSS Framework-Tailwind CSS.
+* Deployed On Netlify
 
 ## Features.
 
