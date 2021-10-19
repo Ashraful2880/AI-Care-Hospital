@@ -2,10 +2,10 @@ import React from 'react';
 import login from '../../Image/login.png';
 import doctor from '../../Image/doctor.png'
 import { Link } from 'react-router-dom';
-import useFirebase from '../../Hooks/UseFirebase';
+import useAuth from '../../Hooks/UseAuth';
 const Login = () => {
 
-    const{handleSignIn,handleEmail,handlePassword}=useFirebase();
+    const{handleSignIn,handleEmail,handlePassword,user,error,setError}=useAuth();
 
     return (
         <div>
@@ -15,6 +15,7 @@ const Login = () => {
                         <div>
                             <img src={doctor} alt="UserImage" />
                             <h1 className="text-2xl font-semibold font-mono leading-3 my-3">Please Login</h1>
+                            {user.email?setError(""): <span className="text-red-600">{error}</span> }
                         </div>
                         <div>
                             <input onBlur={handleEmail} className="p-3 w-80 my-3 border-blue-400 border-b-2 text-xl focus:outline-none"  type="email" placeholder="Your Email" />

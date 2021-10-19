@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom';
 import registerImage from '../../Image/register.png';
 import google from '../../Image/google.png';
 import github from '../../Image/gtihub.png';
-import useFirebase from '../../Hooks/UseFirebase';
+import useAuth from '../../Hooks/UseAuth';
+import userEvent from '@testing-library/user-event';
 
 const Register = () => {
-    const{handleRegister,handleEmail,handlePassword,googleSignIn,gitHubSignIn,error,password}=useFirebase();
+    const{handleRegister,handleEmail,handlePassword,googleSignIn,gitHubSignIn,error,password,user,setError}=useAuth();
     return (
         <div>
             <div className="register-area container flex w-8/12 mx-auto my-10 border-2 p-10 rounded-lg shadow-2xl">
@@ -20,6 +21,7 @@ const Register = () => {
                 <div className="register-input w-6/12">
                     <h1 className="text-blue-400 text-3xl font-semibold mb-9">Register For Appoint</h1>
                     <form onSubmit={handleRegister}>
+                        {user.email?setError(''): <span className="text-red-600">{error}</span> }
                         <div>
                             <input onBlur={handleEmail} className="p-3 w-96 my-3 border-blue-400 border-b-2 text-xl focus:outline-none" type="email" placeholder="Your Email" required/>
                         </div>

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import useFirebase from '../../../Hooks/UseFirebase';
+import useAuth from '../../../Hooks/UseAuth';
 import logo from '../../../Image/logo.png';
 import '../../Services/responsive.css';
 
 const Header = () => {
-    const{user,handleSignOut}=useFirebase();
+    const{user,handleSignOut}=useAuth();
     return (
         <div className='relative'>
             <div className="container m-auto flex justify-between py-2 ">
