@@ -16,6 +16,7 @@ import Details from './Page/Details/Details';
 function App() {
   return (
     <div className="App">
+      <AuthProvider>
         <Router>
           <Header/>
             <Switch>
@@ -31,12 +32,12 @@ function App() {
               <Route path='/services'>
                 <Services/>
               </Route>    
-              <Route path='/service/:id'>
+              <PrivateRoute path='/details'>
                 <Details/>
-              </Route>    
-              <PrivateRoute path='/appointment'>
-                <Appointment/>
               </PrivateRoute>    
+              <Route path='/appointment'>
+                <Appointment/>
+              </Route>    
               <Route path='/register'>
                 <Register/>
               </Route>    
@@ -49,6 +50,7 @@ function App() {
             </Switch>
             <Footer/>    
         </Router> 
+        </AuthProvider>
     </div>
   );
 }
