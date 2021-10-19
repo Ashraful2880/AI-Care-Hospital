@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../Hooks/UseAuth';
 import logo from '../../../Image/logo.png'
 
 const Header = () => {
+    const{handleSignOut,user}=useAuth();
     return (
         <div className='relative'>
             <div className="container m-auto flex justify-between py-2">
@@ -19,15 +21,25 @@ const Header = () => {
                     <Link className="rounded-md mr-5 p-3 text-blue-400 text-xl font-semibold hover:bg-blue-400 hover:text-white transition duration-500 ease-in-out" to="/Services">
                         Services
                     </Link>
+                    {/* <Link className="rounded-md mr-5 p-3 text-blue-400 text-xl font-semibold hover:bg-blue-400 hover:text-white transition duration-500 ease-in-out" to="/details">
+                        Details
+                    </Link> */}
                     <Link className="rounded-md mr-5 p-3 text-blue-400 text-xl font-semibold hover:bg-blue-400 hover:text-white transition duration-500 ease-in-out" to="/appointment">
                     Appointment
                     </Link>
                     <Link className="rounded-md mr-5 p-3 text-blue-400 text-xl font-semibold hover:bg-blue-400 hover:text-white transition duration-500 ease-in-out" to="/register">
                         Register
                     </Link>
-                    <Link className="rounded-md mr-5 p-3 text-blue-400 text-xl font-semibold hover:bg-blue-400 hover:text-white transition duration-500 ease-in-out" to="/login">
-                        login
+                    {user.email?<Link onClick={handleSignOut} className="rounded-md mr-5 p-3 text-blue-400 text-xl font-semibold hover:bg-blue-400 hover:text-white transition duration-500 ease-in-out" to="/home">
+                        Logout
                     </Link>
+                    :<Link className="rounded-md mr-5 p-3 text-blue-400 text-xl font-semibold hover:bg-blue-400 hover:text-white transition duration-500 ease-in-out" to="/login">
+                        Login
+                    </Link>
+                    }
+                    {
+                        user.email?<h1 className="text-blue-600 text-xl font-semibold"><img className="w-10 rounded-full inline" src={user.photoURL} alt="" /> {user.displayName}</h1>: ""
+                    }
                 </div>
             </div>
             <hr />

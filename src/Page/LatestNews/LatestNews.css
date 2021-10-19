@@ -1,0 +1,7 @@
+.news-banner {
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.678), rgba(0, 0, 0, 0.698)), url("../../Image/newsLater.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: top;
+    height: 60vh;
+}

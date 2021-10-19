@@ -4,16 +4,19 @@ import Home from './Page/Home/Home';
 import Footer from './Page/Shared/Footer/Footer';
 import Services from './Page/Services/Services';
 import About from './Page/About/About';
-import Contact from './Page/Appointment/Appointment';
 import Header from './Page/Shared/Header/Header';
 import Register from './Page/Register/Register';
 import Login from './Page/Login/Login';
 import Error from './Page/Error/Error';
 import Appointment from './Page/Appointment/Appointment';
+import AuthProvider from './Context/AuthProvider';
+import PrivateRoute from './Private/PrivateRoute';
+import Details from './Page/Details/Details';
 
 function App() {
   return (
     <div className="App">
+      <AuthProvider>
         <Router>
           <Header/>
             <Switch>
@@ -29,9 +32,12 @@ function App() {
               <Route path='/services'>
                 <Services/>
               </Route>    
-              <Route path='/appointment'>
-                <Appointment/>
+              <Route path='/service/:id'>
+                <Details/>
               </Route>    
+              <PrivateRoute path='/appointment'>
+                <Appointment/>
+              </PrivateRoute>    
               <Route path='/register'>
                 <Register/>
               </Route>    
@@ -43,7 +49,8 @@ function App() {
               </Route>    
             </Switch>
             <Footer/>    
-        </Router>  
+        </Router> 
+      </AuthProvider> 
     </div>
   );
 }
