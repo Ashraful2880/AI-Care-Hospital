@@ -101,3 +101,4 @@ return{handleEmail,handlePassword,handleRegister,error,user,handleSignIn,handleS
 }
 
 export default useFirebase;
+

@@ -1,10 +1,11 @@
 import React from 'react';
 import './LatestNews.css';
+import '../Services/Services'
 
 const LatestNews = () => {
     return (
         <div>
-            <div>
+            <div className="news-text">
                 <h1 className="text-5xl text-blue-400">Latest Tips & News</h1>
                 <h3 className="text-gray-400 w-6/12 mx-auto mt-4 mb-16">Dedicated to advancing the health and transforming the lives of the people through excellent clinical quality, accessible, patient-centered and effective team work.</h3>
             </div>
