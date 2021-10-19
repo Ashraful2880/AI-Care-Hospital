@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useFirebase from '../../../Hooks/UseFirebase';
 import logo from '../../../Image/logo.png';
 import '../../Services/responsive.css';
 
 const Header = () => {
+    const{user,handleSignOut}=useFirebase();
     return (
         <div className='relative'>
             <div className="container m-auto flex justify-between py-2 ">
@@ -29,12 +31,13 @@ const Header = () => {
                     <Link className="rounded-md mr-5 p-3 text-blue-400 text-xl font-semibold hover:bg-blue-400 hover:text-white transition duration-500 ease-in-out" to="/register">
                         Register
                     </Link>
-                    <Link className="rounded-md mr-5 p-3 text-blue-400 text-xl font-semibold hover:bg-blue-400 hover:text-white transition duration-500 ease-in-out" to="/home">
+                    {user.email? <Link onClick={handleSignOut} className="rounded-md mr-5 p-3 text-blue-400 text-xl font-semibold hover:bg-blue-400 hover:text-white transition duration-500 ease-in-out" to="/home">
+                    <span className="text-xl font-semibold text-blue-700 mr-6">{user.displayName}</span>
                         Logout
                     </Link>:
                     <Link className="rounded-md mr-5 p-3 text-blue-400 text-xl font-semibold hover:bg-blue-400 hover:text-white transition duration-500 ease-in-out" to="/login">
                         Login
-                    </Link>
+                    </Link>}
                 </div>
             </div>
             <hr />

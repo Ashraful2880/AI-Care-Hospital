@@ -51,12 +51,10 @@ const useFirebase=()=>{
     }
     const handleRegister=(event)=>{
         event.preventDefault();
-        console.log(password,email);
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const user = userCredential.user;
             setUser(user);
-            console.log(user);
           })
           .catch((error) => {
             setError(error.message)
@@ -70,7 +68,6 @@ const useFirebase=()=>{
         .then((userCredential) => {            
         const user = userCredential.user;
         setUser(user);
-        console.log(user);
   })
   .catch((error) => {
     setError(error.message)
@@ -81,7 +78,7 @@ const useFirebase=()=>{
     const handleSignOut=()=>{
       const auth = getAuth();
       signOut(auth).then(() => {
-
+        setUser('');
     }).catch((error) => {
       setError(error.message)
     });
