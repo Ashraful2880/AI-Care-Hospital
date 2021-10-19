@@ -9,7 +9,7 @@ const Login = () => {
 
     return (
         <div>
-            <div className="flex mt-4 border-0 shadow-2xl rounded-3xl w-8/12 mx-auto py-16">
+            <div className="login-container flex mt-4 border-0 shadow-2xl rounded-3xl w-8/12 mx-auto py-16">
                 <div className="login-area w-6/12">
                     <form onSubmit={handleSignIn} className="login-design border-2 w-96 mx-auto h-auto pb-10 rounded-3xl shadow-2xl mt-8">
                         <div>

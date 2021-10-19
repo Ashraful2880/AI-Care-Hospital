@@ -9,7 +9,7 @@ const Register = () => {
     const{handleRegister,handleEmail,handlePassword,googleSignIn,gitHubSignIn}=useFirebase();
     return (
         <div>
-            <div className="container flex w-8/12 mx-auto my-10 border-2 p-10 rounded-lg shadow-2xl">
+            <div className="register-area container flex w-8/12 mx-auto my-10 border-2 p-10 rounded-lg shadow-2xl">
                 <div className="register-details w-6/12 px-1 border-blue-200 border-r-2">                    
                     <p className="text-xl text-left tracking-tight leading-7 font-sans ">Health is the first step to prosperity
                     Healthy does not mean expensive.</p>

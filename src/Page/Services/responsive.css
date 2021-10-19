@@ -1,7 +1,23 @@
 @media only screen and (max-width:768px) {
+    .banner-text {
+        position: absolute;
+        top: 50%;
+        left: 1px;
+    }
+
+    .banner-text h1 {
+        font-size: 30px;
+    }
+
     .services {
         display: block;
         max-width: 100%;
+    }
+
+    .menu-area {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 10px;
     }
 
     .service {
@@ -9,8 +25,8 @@
         border-bottom: 5px solid greenyellow;
     }
 
-    .menu-area {
-        display: none;
+    .service-p {
+        margin-bottom: 50px;
     }
 
     .about-head {
@@ -32,10 +48,6 @@
     .about-text {
         width: 100%;
         margin-left: 0;
-    }
-
-    .service-p {
-        margin-bottom: 50px;
     }
 
     .register-area {
@@ -75,16 +87,6 @@
         display: none;
     }
 
-    .banner-text {
-        position: absolute;
-        top: 50%;
-        left: 1px;
-    }
-
-    .banner-text h1 {
-        font-size: 30px;
-    }
-
     .news-text h1 {
         width: 100%;
         padding: 0 15px;
@@ -93,6 +95,4 @@
     h3.text-gray-400.w-6\/12.mx-auto.mt-4.mb-16 {
         width: 100%;
     }
-
-
 }
