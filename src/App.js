@@ -16,7 +16,6 @@ import Details from './Page/Details/Details';
 function App() {
   return (
     <div className="App">
-      <AuthProvider>
         <Router>
           <Header/>
             <Switch>
@@ -50,7 +49,6 @@ function App() {
             </Switch>
             <Footer/>    
         </Router> 
-      </AuthProvider> 
     </div>
   );
 }

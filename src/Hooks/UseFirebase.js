@@ -1,108 +1,103 @@
-import firebaseAuthentication from "../Firebase/Firebase.init";
-import {getAuth, signInWithPopup, GoogleAuthProvider,GithubAuthProvider,createUserWithEmailAndPassword,signInWithEmailAndPassword ,onAuthStateChanged,signOut } from "firebase/auth";
+import { getAuth,signOut ,GoogleAuthProvider, createUserWithEmailAndPassword,signInWithEmailAndPassword,onAuthStateChanged,signInWithPopup,GithubAuthProvider } from "firebase/auth";
 import { useEffect, useState } from "react";
+import iniAuthentication from "../Firebase/Firebase.init";
 
-firebaseAuthentication();
+iniAuthentication();
+const useFirebase=()=>{
 
-
-const UseFirebase=()=>{
-    //-------------> All State Here <-------------//
-    const [user,setUser]=useState({});
-    const [error,setError]=useState("");
-    const [userName,setUserName]=useState("");
-    const [email,setEmail]=useState("");
-    const [password,setPassword]=useState("");
-    
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
     const gitHubProvider = new GithubAuthProvider();
 
+    // All State Here
 
-    //--------------> Google Pop Up Sign In <---------------//
+    const [email,setEmail]=useState("");
+    const [password,setPassword]=useState("");
+    const [error,setError]=useState("");
+    const [user,setUser]=useState("");
+
+    // Signin With Google
 
     const googleSignIn=()=>{
-        signInWithPopup(auth, googleProvider)
-        .then(result=>{
-            setUser(result.user);
-        }).catch(error=>{
-            setError(error.message)
-        })
+      signInWithPopup(auth, googleProvider)
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+        console.log(user);
+      }).catch((error) => {
+        setError(error.message)
+      });
     }
-
-    //-------------> Github Pop Up Sign In <-----------//
+    // Sign in With Github
 
     const gitHubSignIn=()=>{
-        signInWithPopup(auth, gitHubProvider)
-        .then(result=>{
-            setUser(result.user);
-        }).catch(error=>{
-            setError(error.message)
-        })
+      signInWithPopup(auth, gitHubProvider)
+      .then((result) => {
+      const user = result.user;
+      setUser(user)
+      console.log(result.user);
+  }).catch((error) => {
+    setError(error.message)
+    console.error(error.message);
+  });
     }
-    //-------------> Create New User <-----------//
+    // Create New User With Email & Password
 
-    const handleName=(event)=>{
-        setUserName(event.target.value);
-    }
     const handleEmail=(event)=>{
-        setEmail(event.target.value);
+        setEmail(event.target.value)
     }
-
     const handlePassword=(event)=>{
-        setPassword(event.target.value);
+        setPassword(event.target.value)        
     }
-
-    //-------------> Register Handler <-------------//
-
     const handleRegister=(event)=>{
         event.preventDefault();
-        if(password<6){
-            setError("Password should be at least 6 character");
-            return;
-        }
-        console.log(userName);
+        console.log(password,email);
         createUserWithEmailAndPassword(auth, email, password)
-        .then(result=>{
-            setUser(result.user);
-            console.log(result.user);
-        }).catch(error=>{
-            setError(error.message)
-        })
-    }
-
-    //----------------> SignIn With Email & Password <----------------//
-
-    const signInHandler=(event)=>{
-        event.preventDefault();
-        signInWithEmailAndPassword(auth, email, password)
-        .then(result=>{
-            setUser(result.user);
-        }).catch(error=>{
-            setError(error.message)
-        })
-    }
-
-    //--------------> Sign Out Handler <-------------//
-
-    const handleSignOut=()=>{
-        signOut(auth).then(() => {
-            setUser({});
-          }).catch((error) => {
+        .then((userCredential) => {
+            const user = userCredential.user;
+            setUser(user);
+            console.log(user);
+          })
+          .catch((error) => {
             setError(error.message)
           });
     }
+    // Handle Sign in Existing User
 
-    //--------------> Observe User State Changed Or Not <-------------//
+    const handleSignIn=(event)=>{
+        event.preventDefault();
+        signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {            
+        const user = userCredential.user;
+        setUser(user);
+        console.log(user);
+  })
+  .catch((error) => {
+    setError(error.message)
+  });
+    }
+    // Handle Sign Out
 
-    useEffect(()=>{
-        onAuthStateChanged(auth,(user)=>{
-            if(user){
-                setUser(user);
-            }else{
-                setError(error.message)
-            }
-        })
-    },[])
-    return{googleSignIn,gitHubSignIn,handleSignOut,handleName,handleEmail,handlePassword,handleRegister,signInHandler,user,error,userName}
+    const handleSignOut=()=>{
+      const auth = getAuth();
+      signOut(auth).then(() => {
+
+    }).catch((error) => {
+      setError(error.message)
+    });
+    }
+     // observe whether user auth state changed or not
+     useEffect(()=>{
+      onAuthStateChanged(auth,(user)=>{
+          if(user){
+              setUser(user)
+          }else{
+            setUser("")
+          }
+      })
+  },[])
+
+return{handleEmail,handlePassword,handleRegister,error,user,handleSignIn,handleSignOut,googleSignIn,gitHubSignIn}
 }
-export default UseFirebase;
+
+export default useFirebase;

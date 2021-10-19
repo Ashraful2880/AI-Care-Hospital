@@ -1,9 +1,9 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyCJToa6UwapmM6185UboU21Kb-48QtYjLo",
-    authDomain: "authentication-all-c5def.firebaseapp.com",
-    projectId: "authentication-all-c5def",
-    storageBucket: "authentication-all-c5def.appspot.com",
-    messagingSenderId: "17393518750",
-    appId: "1:17393518750:web:d3d049fa54245d2b5f538f"
-  };
+  apiKey: "AIzaSyAoVS9m3TJGhs65Z7WA_rujE5io15iASyU",
+  authDomain: "hospital-care-authentication.firebaseapp.com",
+  projectId: "hospital-care-authentication",
+  storageBucket: "hospital-care-authentication.appspot.com",
+  messagingSenderId: "325464201708",
+  appId: "1:325464201708:web:976c0676f86d1204ab88c9"
+};
   export default firebaseConfig;
