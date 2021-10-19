@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import login from '../../Image/login.png';
+import '../Services/responsive.css'
 import doctor from '../../Image/doctor.png'
 import { Link } from 'react-router-dom';
 import authenticationFirebase from '../Firebase/Firebase.init';

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import registerImage from '../../Image/register.png';
 import google from '../../Image/google.png';
 import github from '../../Image/gtihub.png';
+import '../Services/responsive.css'
 import authenticationFirebase from '../Firebase/Firebase.init';
 import {getAuth, signInWithPopup, GoogleAuthProvider,createUserWithEmailAndPassword } from "firebase/auth";
 

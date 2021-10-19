@@ -1,4 +1,5 @@
 import React from 'react';
+import '../Services/responsive.css';
 import shape from '../../Image/line.png';
 import about from '../../Image/about .png';
 

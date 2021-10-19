@@ -1,5 +1,6 @@
 import React from 'react';
 import './LatestNews.css';
+import '../Services/Services'
 
 const LatestNews = () => {
     return (
