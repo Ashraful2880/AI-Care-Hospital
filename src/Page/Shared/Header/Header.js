@@ -22,7 +22,7 @@ const Header = () => {
                     <Link className="rounded-md mr-5 p-3 text-blue-400 text-xl font-semibold hover:bg-blue-400 hover:text-white transition duration-500 ease-in-out" to="/Services">
                         Services
                     </Link>
-                    <Link className="rounded-md mr-5 p-3 text-blue-400 text-xl font-semibold hover:bg-blue-400 hover:text-white transition duration-500 ease-in-out" to="/details">
+                    <Link className="rounded-md mr-5 p-3 text-blue-400 text-xl font-semibold hover:bg-blue-400 hover:text-white transition duration-500 ease-in-out" to="/details/:serviceId">
                         Details
                     </Link>
                     <Link className="rounded-md mr-5 p-3 text-blue-400 text-xl font-semibold hover:bg-blue-400 hover:text-white transition duration-500 ease-in-out" to="/appointment">

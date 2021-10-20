@@ -6,8 +6,6 @@ iniAuthentication();
 const useFirebase=()=>{
 
     const auth = getAuth();
-    const googleProvider = new GoogleAuthProvider();
-    const gitHubProvider = new GithubAuthProvider();
 
     // All State Here
 
@@ -15,21 +13,26 @@ const useFirebase=()=>{
     const [password,setPassword]=useState("");
     const [error,setError]=useState("");
     const [user,setUser]=useState("");
+    const [isloading,setIsLoading]=useState(true);
 
     // Signin With Google
 
     const googleSignIn=()=>{
+      setIsLoading(true);
+      const googleProvider = new GoogleAuthProvider();
       signInWithPopup(auth, googleProvider)
       .then((result) => {
         const user = result.user;
         setUser(user);
       }).catch((error) => {
         setError(error.message)
-      });
+      }).finally(()=>setIsLoading(false));
     }
     // Sign in With Github
 
     const gitHubSignIn=()=>{
+      setIsLoading(true);
+      const gitHubProvider = new GithubAuthProvider();
       signInWithPopup(auth, gitHubProvider)
       .then((result) => {
       const user = result.user;
@@ -38,7 +41,7 @@ const useFirebase=()=>{
   }).catch((error) => {
     setError(error.message)
     console.error(error.message);
-  });
+  }).finally(()=>setIsLoading(false));
     }
     // Create New User With Email & Password
 
@@ -50,6 +53,7 @@ const useFirebase=()=>{
     }
     const handleRegister=(event)=>{
         event.preventDefault();
+        setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const user = userCredential.user;
@@ -57,12 +61,13 @@ const useFirebase=()=>{
           })
           .catch((error) => {
             setError(error.message)
-          });
+          }).finally(()=>setIsLoading(false));
     }
     // Handle Sign in Existing User
 
     const handleSignIn=(event)=>{
         event.preventDefault();
+        setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {            
         const user = userCredential.user;
@@ -70,30 +75,33 @@ const useFirebase=()=>{
   })
   .catch((error) => {
     setError(error.message)
-  });
+  }).finally(()=>setIsLoading(false));
     }
     // Handle Sign Out
 
     const handleSignOut=()=>{
       const auth = getAuth();
+      setIsLoading(true);
       signOut(auth).then(() => {
         setUser('');
     }).catch((error) => {
       setError(error.message)
-    });
+    }).finally(()=>setIsLoading(false));
     }
      // observe whether user auth state changed or not
      useEffect(()=>{
-      onAuthStateChanged(auth,(user)=>{
+      const unsubscribed= onAuthStateChanged(auth,(user)=>{
           if(user){
-              setUser(user)
+              setUser(user);
           }else{
-            setUser("")
+            setUser("");
           }
-      })
+          setIsLoading(false);
+      });
+      return ()=>unsubscribed;
   },[])
 
-return{handleEmail,handlePassword,handleRegister,error,user,handleSignIn,handleSignOut,googleSignIn,gitHubSignIn}
+return{handleEmail,handlePassword,handleRegister,error,user,handleSignIn,handleSignOut,googleSignIn,gitHubSignIn,setError,isloading}
 }
 
 export default useFirebase;

@@ -1,4 +1,4 @@
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:688px) {
     .banner-text {
         position: absolute;
         top: 50%;
@@ -9,18 +9,15 @@
         font-size: 30px;
     }
 
-    .services {
-        display: block;
-        max-width: 100%;
-    }
-
     .menu-area {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         padding: 0 10px;
     }
 
-    .service {
+    .services {
+        display: block;
+        max-width: 100%;
         margin-bottom: 10px;
         border-bottom: 5px solid greenyellow;
     }
@@ -94,5 +91,43 @@
 
     h3.text-gray-400.w-6\/12.mx-auto.mt-4.mb-16 {
         width: 100%;
+    }
+}
+
+
+@media only screen and (min-width:689px) and (max-width:992px) {
+    .services {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .news-text h3 {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .news-banner {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0;
+    }
+
+    .login-container,
+    .register-area,
+    .appoint-container {
+        display: block;
+        width: 100%;
+    }
+
+    .login-area,
+    .login-text,
+    .register-details,
+    .register-input {
+        width: 100%;
+    }
+
+    .register-details h1,
+    .register-details p {
+        text-align: center;
     }
 }
