@@ -4,6 +4,7 @@
       "url": "https://i.ibb.co/bH6JscN/service1.png",
       "name": "Primary Health Care",
       "description": "Most people visit their GP (sometimes referred to as the local doctor as a first step when they have a health problem that is not an emergency. The primary healthcare system also includes allied health professionals, such as dentists and physiotherapists.",
+      "doctor": "Michel Princh",
       "cost":23.99
     },  
     {
@@ -11,35 +12,40 @@
       "url": "https://i.ibb.co/kSJ3dfw/service2.png",
       "name": "Cardiac Clinic",
       "description": "Our seven physicians are all board certified in Internal Medicine and Cardiovascular Diseases.   Their diversified training can accommodate all aspects of your cardiology care. We pride ourselves on disease prevention, maintenance, patient education, and excellent clinical care",
-      "price":30.99
+      "doctor": "Abul Pritom",
+      "cost":30.99
     },  
     {
       "id": "103",
       "url": "https://i.ibb.co/QcCXKB8/service3.png",
       "name": "Dental Surgery",
       "description": "Dental surgery is a part of dentistry, which is a branch of medicine dealing with teeth, gums, and the mouth. Dentists are the practitioners of dentistry and they deal with the treatment, prevention, diagnosis, and study of conditions, disorders, and diseases of the oral cavity",
-      "price":25.99
+      "doctor": "Billal Kormokar",
+      "cost":25.99
     },  
     {
       "id": "104",
       "url": "https://i.ibb.co/h1p8myD/service4.png",
       "name": "Rehabilition Center",
       "description": "A rehabilitation center will offer one or more of these therapies on premises. A rehabilitation center may be outpatient only. Some hospitals offer in-patient rehabilitation.We are the beat in their",
-      "price":68.99
+      "doctor": "Dulal Dhali",
+      "cost":68.99
     },  
     {
       "id": "105",
       "url": "https://i.ibb.co/fFfcdLh/service5.png",
       "name": "Precise Diagnosis",
       "description": "After receiving a cancer diagnosis, you may feel the need to rush into treatment. It is vital, however, to first make sure you have received a precise diagnosis. Our pathologists correct a new patient’s diagnosis from another institution up to 25% of the time",
-      "price":45.99
+      "doctor": "Ariana Kibria",
+      "cost":45.99
     },  
     {
       "id": "106",
       "url": "https://i.ibb.co/pRSwxmz/service6.png",
       "name": "Gyneological Clinic",
       "description": "A diagnostic technique which uses high-frequency sound waves to create an image of internal organs.The removal of sample of cells or tissue via a hollow needle or scalpel to discover the presence, cause, or extent of a disease",
-      "price":87.99
+      "doctor": "Michel Von",
+      "cost":87.99
     },  
     {
       "id": "107",
@@ -47,20 +53,23 @@
       "name": "Emergency Care",
       "description": "Emergency Care is an essential part of the health system and serves as the first point of contact for many around the world.It is goal-oriented treatment provided immediately after, or instead of, acute hospitalization to treat specific active complex medical conditions",
       "category":"dinner",
-      "price":45.99
+      "doctor": "John Smith",
+      "cost":45.99
     },  
     {
       "id": "108",
       "url": "https://i.ibb.co/SXqvYgx/service8.png",
       "name": "3D Surgery",
       "description": "Using special CT scans and a technology very similar to GPS, a 3D guidance system allows surgeons to visualize the patient's anatomy in a 3D view and visual the placement of surgical instrumentation throughout the surgical procedur",
-      "price":50.99
+      "doctor": "Pridal Crusher",
+      "cost":50.99
     },  
     {
       "id": "109",
       "url": "https://i.ibb.co/5x6tB0T/service9.png",
       "name": "Baby Unit",
       "description": "Each unit has its own routine and the healthcare team will show you around and tell you everything you need to know. As your baby’s parent, you’re not classed as a visitor to the baby unit and are welcome to come and go from the unit at any time of the day or night",
-      "price":32.99
+      "doctor": "Alex-jahan",
+      "cost":32.99
     }
   ]

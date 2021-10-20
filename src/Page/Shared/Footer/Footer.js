@@ -12,19 +12,14 @@ const Footer = () => {
                     </div>
                     <div>
                         <i className="text-white bg-blue-400 px-2 py-1 mx-2 rounded-full hover:bg-white hover:text-blue-500 text-xl transition transform hover:-translate-y-1 fab fa-facebook">
-
                         </i>
                         <i className="text-white bg-blue-400 px-2 py-1 mx-2 rounded-full hover:bg-white hover:text-blue-500 text-xl transition transform hover:-translate-y-1 fab fa-twitter">
-
                         </i>
                         <i className="text-white bg-blue-400 px-2 py-1 mx-2 rounded-full hover:bg-white hover:text-blue-500 text-xl transition transform hover:-translate-y-1 fab fa-instagram">
-
                         </i>
                         <i className="text-white bg-blue-400 px-2 py-1 mx-2 rounded-full hover:bg-white hover:text-blue-500 text-xl transition transform hover:-translate-y-1 fab fa-linkedin-in">
-
                         </i>
                         <i className="text-white bg-blue-400 px-2 py-1 mx-2 rounded-full hover:bg-white hover:text-blue-500 text-xl transition transform hover:-translate-y-1 fab fa-google-plus-g">
-
                         </i>
                     </div>
                     <div className="mt-5">

@@ -8,15 +8,15 @@ const Header = () => {
     const{user,handleSignOut}=useAuth();
     return (
         <div className='relative'>
-            <div className="container m-auto flex justify-between py-2 ">
-                <div className="main-logo">
-                    <Link to="/home"><img className="w-16" src={logo} alt="main-logo" /></Link>
+            <div className="container m-auto lg:flex lg:justify-between py-2">
+                <div className="main-logo sm:block">
+                    <Link to="/home"><img className="w-16" src={logo} alt="main-logo"/></Link>
                 </div>
-                <div className="flex justify-center items-center menu-area">
+                <div className="lg:flex lg:justify-center lg:items-center sm:grid sm:grid-cols-2">
                     <Link className="rounded-md mr-5 p-3 text-blue-400 text-xl font-semibold hover:bg-blue-400 hover:text-white transition duration-500 ease-in-out" to="/home">
                         Home
                     </Link>
-                    <Link className="rounded-md mr-5 p-3 text-blue-400 text-xl font-semibold hover:bg-blue-400 hover:text-white transition duration-500 ease-in-out" to="/about">
+                    <Link className=" rounded-md mr-5 p-3 text-blue-400 text-xl font-semibold hover:bg-blue-400 hover:text-white transition duration-500 ease-in-out" to="/about">
                         About
                     </Link>
                     <Link className="rounded-md mr-5 p-3 text-blue-400 text-xl font-semibold hover:bg-blue-400 hover:text-white transition duration-500 ease-in-out" to="/Services">

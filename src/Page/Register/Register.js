@@ -4,32 +4,31 @@ import registerImage from '../../Image/register.png';
 import google from '../../Image/google.png';
 import github from '../../Image/gtihub.png';
 import useAuth from '../../Hooks/UseAuth';
-import userEvent from '@testing-library/user-event';
 
 const Register = () => {
     const{handleRegister,handleEmail,handlePassword,googleSignIn,gitHubSignIn,error,password,user,setError}=useAuth();
     return (
         <div>
-            <div className="register-area container flex w-8/12 mx-auto my-10 border-2 p-10 rounded-lg shadow-2xl">
-                <div className="register-details w-6/12 px-1 border-blue-200 border-r-2">                    
-                    <p className="text-xl text-left tracking-tight leading-7 font-sans ">Health is the first step to prosperity
+            <div className=" container lg:flex lg:w-8/12 mx-auto lg:my-10 border-2 p-10 rounded-lg shadow-2xl sm:block sm:w-full">
+                <div className="register-details w-6/12 px-1 border-blue-200 border-r-2 sm:block sm:w-full">                    
+                    <p className="text-xl sm:text-center text-left tracking-tight leading-7 font-sans ">Health is the first step to prosperity
                     Healthy does not mean expensive.</p>
-                    <p className="text-xl text-left tracking-tight leading-7">Better Care and Better Understanding.</p>
-                    <h1 className="text-blue-400 text-4xl font-semibold font-mono text-left mt-8">AI Care Hospital</h1>
+                    <p className="text-xl sm:text-center text-left tracking-tight leading-7">Better Care and Better Understanding.</p>
+                    <h1 className="text-blue-400 text-4xl font-semibold font-mono text-left mt-8 sm:text-center">AI Care Hospital</h1>
                     <img src={registerImage} alt="RegisterImage" />
                 </div>
-                <div className="register-input w-6/12">
+                <div className=" lg:w-6/12 sm:w-full">
                     <h1 className="text-blue-400 text-3xl font-semibold mb-9">Register For Appoint</h1>
                     <form onSubmit={handleRegister}>
                         {user.email?setError(''): <span className="text-red-600">{error}</span> }
                         <div>
-                            <input onBlur={handleEmail} className="p-3 w-96 my-3 border-blue-400 border-b-2 text-xl focus:outline-none" type="email" placeholder="Your Email" required/>
+                            <input onBlur={handleEmail} className="p-3 lg:w-96 my-3 border-blue-400 border-b-2 text-xl focus:outline-none sm:w-full" type="email" placeholder="Your Email" required/>
                         </div>
                         <div>
-                            <input onBlur={handlePassword} className="p-3 w-96 my-3 border-blue-400 border-b-2 text-xl focus:outline-none" type="password" placeholder="Your Password" required/>
+                            <input onBlur={handlePassword} className="p-3 lg:w-96 my-3 border-blue-400 border-b-2 text-xl focus:outline-none sm:w-full" type="password" placeholder="Your Password" required/>
                         </div>
                         <div>
-                            <input className="py-3 px-5 w-40 border-2 border-blue-400 rounded-3xl text-blue-400 bg-transparent hover:bg-blue-400 hover:text-white my-5" type="submit" value="Register" />
+                            <input className="py-3 px-5 lg:w-40 border-2 border-blue-400 rounded-3xl text-blue-400 bg-transparent hover:bg-blue-400 hover:text-white my-5 sm:w-full" type="submit" value="Register" />
                         </div>
                     </form>
                         <div>
