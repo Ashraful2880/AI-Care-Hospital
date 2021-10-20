@@ -22,7 +22,7 @@ const Header = () => {
                     <Link className="rounded-md mr-5 p-3 text-blue-400 text-xl font-semibold hover:bg-blue-400 hover:text-white transition duration-500 ease-in-out" to="/Services">
                         Services
                     </Link>
-                    <Link className="rounded-md mr-5 p-3 text-blue-400 text-xl font-semibold hover:bg-blue-400 hover:text-white transition duration-500 ease-in-out" to="/details/:serviceId">
+                    <Link className="rounded-md mr-5 p-3 text-blue-400 text-xl font-semibold hover:bg-blue-400 hover:text-white transition duration-500 ease-in-out" to={`/details/id`}>
                         Details
                     </Link>
                     <Link className="rounded-md mr-5 p-3 text-blue-400 text-xl font-semibold hover:bg-blue-400 hover:text-white transition duration-500 ease-in-out" to="/appointment">
@@ -31,8 +31,9 @@ const Header = () => {
                     <Link className="rounded-md mr-5 p-3 text-blue-400 text-xl font-semibold hover:bg-blue-400 hover:text-white transition duration-500 ease-in-out" to="/register">
                         Register
                     </Link>
+                    {user.email? <img className="w-8 h-8 mr-6 rounded-full" src={user.photoURL} alt="" /> :""}
+                    {user.email?<span className="text-xl font-semibold text-blue-700 mr-6">{user.displayName}</span>:""}
                     {user.email? <Link onClick={handleSignOut} className="rounded-md mr-5 p-3 text-blue-400 text-xl font-semibold hover:bg-blue-400 hover:text-white transition duration-500 ease-in-out" to="/home">
-                    <span className="text-xl font-semibold text-blue-700 mr-6">{user.displayName}</span>
                         Logout
                     </Link>:
                     <Link className="rounded-md mr-5 p-3 text-blue-400 text-xl font-semibold hover:bg-blue-400 hover:text-white transition duration-500 ease-in-out" to="/login">

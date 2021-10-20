@@ -11,6 +11,7 @@ const Details = () => {
     .then(data=>{
     const p=data.find(p=>p.id==serviceId)
     setDetails(p)
+    console.log(p);
     })},[serviceId]);
     return (
         <div>
@@ -23,7 +24,7 @@ const Details = () => {
                <h1 className="text-blue-500 text-3xl font-semibold text-left">Service Name: {details.name}</h1>
                <h1 className="text-blue-400 text-2xl font-semibold text-left">Details About This Service</h1>
                <h2 className="text-green-600 text-xl font-semibold text-left">Doctor Name: {details.doctor}</h2>
-               <h1 className="text-red-600 text-xl font-semibold text-left">Total Cost: {details.cost}$</h1>
+               <h1>Total Cost: {details.cost}</h1>
                <p className="text-xl text-left mt-9">{details.description}</p>
                <button className="text-xl bg-blue-400 px-2 py-2 text-white rounded-md w-40 mr-20 mt-20">Confirm Service</button>
                <Link to="/home" className="text-xl bg-blue-400 px-2 py-2 text-white rounded-md w-40">Back To Home</Link>
