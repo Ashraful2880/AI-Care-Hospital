@@ -28,9 +28,9 @@ const Header = () => {
                   <li className="nav-item">
                       <Link className="nav-link text-info fs-4" to="/appointment"> Appointment</Link>
                   </li>
-                  <li className="nav-item">
+                  {!user.email?<li className="nav-item">
                       <Link className="nav-link text-info fs-4" to="/register"> Register </Link>                      
-                  </li>
+                  </li>:""}
                   <li className="nav-item">
                   {user.email? <img className="user-image rounded-circle" src={user.photoURL} alt="" /> :""}
                       {user.email?<span className="text-primary fs-5 userName">{user.displayName}</span>:""}                      

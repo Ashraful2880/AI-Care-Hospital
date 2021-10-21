@@ -10,11 +10,10 @@ const Login = () => {
     let history=useHistory();
     return (
         <div className="container pt-2">
-            
-            <h1 className="text-info">Plesae Login</h1>
+            <h1 className="text-info pt-3">Plesae Login</h1>
             <div className="row my-5">
-                <div className="col col-md-6 col-sm-12">
-                    <form onSubmit={handleSignIn} className="login-design border-2 w-75 mx-auto h-auto pb-5 rounded-3">
+                <div className="col-lg-6 col-md-12 col-sm-12">
+                    <form onSubmit={handleSignIn} className="login-design border-2 w-100 mx-auto h-auto pb-5 rounded-3">
                         <div>
                             <img className="w-75" src={doctor} alt="UserImage" />
                             <h1 className="fs-2 my-3">Put Your Information</h1>
@@ -35,8 +34,8 @@ const Login = () => {
                         </div>
                     </form>
                 </div>
-                <div className="col col-md-6 col-sm-12">
-                    <div className="login-text border-2 w-75 mx-auto h-auto py-5 rounded-3">
+                <div className="col-lg-6 col-md-12 col-sm-12">
+                    <div className="login-text border-2 w-100 mx-auto h-auto py-5 rounded-3">
                         <h2 className="fs-2 pt-5">Welcome Back To</h2>
                         <h1 className="text-info">AI Care Hospital</h1>
                         <h4 className="text-info mb-5">We Care About You</h4>

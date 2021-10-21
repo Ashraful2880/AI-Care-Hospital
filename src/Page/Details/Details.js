@@ -25,7 +25,7 @@ const Details = () => {
                     <h3 className="text-info text-center">Details About This Service</h3>
                     <h4 className="text-warning text-xl font-semibold text-center">Doctor Name: {details.doctor}</h4>
                     <h4 className="text-danger">Total Cost: {details.cost}</h4>
-                    <p className="text-secondary text-start w-50 mx-auto">{details.description}</p>
+                    <p className="text-secondary text-start w-75 mx-auto">{details.description}</p>
                     <button className="btn btn-info px-2 py-2 text-white rounded-2 w-40 mt-3 mb-5">Confirm Service</button>
                     <Link to="/home" className="btn btn-warning px-2 py-2 text-white rounded-2 w-40 mt-3 mb-5 ms-5">Back To Home</Link>
                 </div>           

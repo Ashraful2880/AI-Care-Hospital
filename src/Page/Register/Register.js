@@ -11,16 +11,16 @@ const Register = () => {
     let history=useHistory();
     return (
         <div>
-            <div className="mt-5 container mx-auto border-2 p-5 rounded-3 row">
-                <div className="col col-md-6 col-sm-12 reg-text rounded-3">
-                    <p className="fs-4 text-center px-5 pt-3">Health is the first step to prosperity
+            <div className="mt-5 container mx-auto border-2 rounded-3 row">
+                <div className="col-lg-6 col-md-12 col-sm-12 reg-text rounded-3 pt-5">
+                    <p className="fs-4 text-center pt-3">Health is the first step to prosperity
                     Healthy does not mean expensive.</p>
                     <p className="fs-4 text-center">Better Care and Better Understanding.</p>
                     <h1 className="text-info text-2 mt-3 text-center">AI Care Hospital</h1>
                     <img className="w-100" src={registerImage} alt="RegisterImage" />
                 </div>
-                <div className="col col-md-6 col-sm-12 rounded-3 reg-area py-5">
-                    <div className="col-md-6 col-sm-12 col w-100">
+                <div className="col-lg-6 col-md-12 col-sm-12 rounded-3 reg-area py-5">
+                    <div className="col-md-12 col-sm-12 col-lg-6 w-100">
                         <h1 className="text-info mb-5">Register For Appoint</h1>
                         <form onSubmit={handleRegister}>
                         {user.email?history.push('/home'):''}
@@ -41,28 +41,16 @@ const Register = () => {
                             <h4 className="text-md">Already Registerd? <Link className="text-blue-400 font-semibold" to="/login">Login Here</Link></h4>
                             <p className="text-md font-semibold">Or</p>
                             </div>
-                            <div className="w-75 mx-auto">
-                                <button onClick={googleSignIn} className="d-flex border justify-content-around align-items-center sign-btn border border-info border-2">
+                            <div className="mx-auto row">
+                                <button onClick={googleSignIn} className="col-sm-12 d-flex border justify-content-around align-items-center sign-btn border border-info border-2">
                                     <img style={{width:"45px"}} src={google} alt="googleImage" />
                                     <h5>Continue With Google</h5>
                                 </button>
-                                <button onClick={gitHubSignIn} className=" d-flex border mt-3 justify-content-around align-items-center sign-btn border border-info border-2" >
+                                <button onClick={gitHubSignIn} className=" d-flex border mt-3 justify-content-around align-items-center sign-btn border border-info border-2 col-sm-12" >
                                     <img style={{width:"75px"}} src={github} alt="googleImage" />
                                     <h5>Continue With GitHub</h5>
                                 </button>
                             </div>
-                           {/*  <div className="w-50">
-                                <button onClick={googleSignIn} className="d-flex justify-content-around align-items-center">
-                                    <img className="w-25 google" src={google} alt="googleimag" />
-                                    <h5>Continue With Google</h5>
-                                </button>
-                            </div>
-                            <div className="w-50">
-                                <button onClick={gitHubSignIn} className="d-flex justify-content-around align-items-center">
-                                <img className="w-25 github" src={github} alt="googleimag" />
-                                <h5>Continue With Github</h5>
-                                </button>
-                            </div> */}
                         </form>
                     </div>
                 </div>

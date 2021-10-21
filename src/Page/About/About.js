@@ -14,10 +14,10 @@ const About = () => {
                 <img className="mx-auto mb-5" src={shape} alt="" />
             </div>
             <div className="container-fluid row">
-                <div className="col-sm-12 col-md-6 col">
-                    <img className="about-img" src={about} alt="aboutImage" />
+                <div className="col-sm-12 col-md-12 col-lg-4 mx-auto">
+                    <img className="about-img w-100" src={about} alt="aboutImage" />
                 </div>
-                <div className=" col-sm-12 col-md-6 col about-text py-3 px-5 rounded-3">
+                <div className=" col-sm-12 col-md-12 col-lg-6 about-text py-3  rounded-3 px-4">
                     <h1 className="mb-5 text-info">Special Operation Theater</h1>
                     <p className="mb-3 fs-5 text-secondary text-start">
                         Getting a new patient to actually walk through the door can mean the difference between a long-term relationship or no relationship at all. When a person doesn’t show up for their initial meeting with a doctor, the likelihood that they’ll reschedule it is low
@@ -31,7 +31,7 @@ const About = () => {
                 </div>
             </div>
             <div className="container-fluid row mt-5">
-                <div className=" col-sm-12 col-md-6 col about-text py-3 px-5 rounded-3">
+                <div className=" col-sm-12 col-md-6 col-lg-6 about-text py-3 px-5 rounded-3">
                     <h1 className="mb-5 text-info">Experienced Doctor </h1>
                     <p className="mb-3 fs-5 text-secondary text-start">
                         Getting a new patient to actually walk through the door can mean the difference between a long-term relationship or no relationship at all. When a person doesn’t show up for their initial meeting with a doctor, the likelihood that they’ll reschedule it is low
@@ -43,15 +43,15 @@ const About = () => {
                         Reminder texts can also help existing patients stay engaged so  they’re more likely to keep their commitment. Messages can be    used for actually scheduling their appointment, as the text    conversation below illustrates
                     </p>
                 </div>
-                <div className="col-sm-12 col-md-6 col">
-                    <img className="about-img" src={exper} alt="aboutImage" />
+                <div className="col-sm-12 col-md-12 col-lg-4 mx-auto">
+                    <img className="about-img w-100" src={exper} alt="aboutImage" />
                 </div>
             </div>
             <div className="container-fluid row mt-5">
-                <div className="col-sm-12 col-md-6 col">
-                    <img className="about-img" src={covid} alt="aboutImage" />
+                <div className="col-sm-12 col-md-12 col-lg-4 mx-auto">
+                    <img className="about-img w-100" src={covid} alt="aboutImage" />
                 </div>
-                <div className=" col-sm-12 col-md-6 col about-text py-3 px-5 rounded-3">
+                <div className=" col-sm-12 col-md-12 col-lg-6 about-text py-3 rounded-3">
                     <h1 className="mb-5 text-info">Covid-19 Special Unit</h1>
                     <p className="mb-3 fs-5 text-secondary text-start">
                         Getting a new patient to actually walk through the door can mean the difference between a long-term relationship or no relationship at all. When a person doesn’t show up for their initial meeting with a doctor, the likelihood that they’ll reschedule it is low
