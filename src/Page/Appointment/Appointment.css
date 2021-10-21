@@ -3,3 +3,12 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+
+.app-input:focus {
+    outline: 0;
+}
+
+.appoint-input-area,
+.appoint-img {
+    box-shadow: 10px 10px 30px rgb(243, 243, 243);
+}

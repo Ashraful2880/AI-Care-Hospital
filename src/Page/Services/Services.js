@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Service from '../Service/Service';
-import './responsive.css';
 
 const Services = () => {
     const [services,setServices]=useState([]);
@@ -11,8 +10,9 @@ const Services = () => {
     },[])
     return (
         <div>
-            <h2 className="text-4xl font-semibold text-blue-400 mt-6 mb-20">Our Quality Services</h2>
-            <div  className="sm:block sm:w-full sm:mb-10 sm:border-6 sm:border-green-500 container mx-auto lg:grid lg:grid-cols-3 lg:gap-32 lg:mb-20">
+            
+            <div  className="container mx-auto row">
+            <h2 className="text-info my-5">Our Quality Services</h2>
                 {
                     services.map(service=><Service key={service.id} service={service}/>)
                 }

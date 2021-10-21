@@ -1,4 +1,4 @@
-import { getAuth,signOut ,GoogleAuthProvider, createUserWithEmailAndPassword,signInWithEmailAndPassword,onAuthStateChanged,signInWithPopup,GithubAuthProvider } from "firebase/auth";
+import { getAuth,updateProfile,signOut ,GoogleAuthProvider, createUserWithEmailAndPassword,signInWithEmailAndPassword,onAuthStateChanged,signInWithPopup,GithubAuthProvider } from "firebase/auth";
 import { useEffect, useState } from "react";
 import iniAuthentication from "../Firebase/Firebase.init";
 
@@ -9,6 +9,7 @@ const useFirebase=()=>{
 
     // All State Here
 
+    const [name,setName]=useState("");
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
     const [error,setError]=useState("");
@@ -45,6 +46,9 @@ const useFirebase=()=>{
     }
     // Create New User With Email & Password
 
+    const handleName=(event)=>{
+      setName(event.target.value)
+    }
     const handleEmail=(event)=>{
         setEmail(event.target.value)
     }
@@ -57,12 +61,23 @@ const useFirebase=()=>{
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const user = userCredential.user;
-            setUser(user);
+            setUser({...user,displayName:name});
+            updateName();
           })
           .catch((error) => {
             setError(error.message)
           }).finally(()=>setIsLoading(false));
-    }
+        }
+
+        const updateName=()=>{
+          updateProfile(auth.currentUser, {
+            displayName: name
+          }).then(() => {
+
+          }).catch((error) => {
+            setError(error.message)
+          });
+        }
     // Handle Sign in Existing User
 
     const handleSignIn=(event)=>{
@@ -101,7 +116,7 @@ const useFirebase=()=>{
       return ()=>unsubscribed;
   },[])
 
-return{handleEmail,handlePassword,handleRegister,error,user,handleSignIn,handleSignOut,googleSignIn,gitHubSignIn,setError,isloading}
+return{handleEmail,handleName,handlePassword,handleRegister,error,user,handleSignIn,handleSignOut,googleSignIn,gitHubSignIn,setError,isloading}
 }
 
 export default useFirebase;

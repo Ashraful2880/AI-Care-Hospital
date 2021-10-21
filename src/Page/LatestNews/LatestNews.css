@@ -3,5 +3,6 @@
     background-size: cover;
     background-attachment: fixed;
     background-position: top;
-    height: 60vh;
+    height: auto;
+    padding: 200px 0;
 }

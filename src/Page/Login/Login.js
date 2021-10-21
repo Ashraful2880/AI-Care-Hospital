@@ -1,40 +1,47 @@
 import React from 'react';
+import './Login.css';
 import login from '../../Image/login.png';
 import doctor from '../../Image/doctor.png'
-import { Link } from 'react-router-dom';
+import { Link , useHistory} from 'react-router-dom';
 import useAuth from '../../Hooks/UseAuth';
 const Login = () => {
 
     const{handleSignIn,handleEmail,handlePassword,user,error,setError}=useAuth();
-
+    let history=useHistory();
     return (
-        <div>
-            <div className="lg:flex mt-4 border-0 shadow-2xl rounded-3xl lg:w-8/12 mx-auto py-16 sm:block sm:w-full">
-                <div className="lg:w-6/12 sm:block sm:w-full sm:mb-20">
-                    <form onSubmit={handleSignIn} className="login-design border-2 w-96 mx-auto h-auto pb-10 rounded-3xl shadow-2xl mt-8">
+        <div className="container pt-2">
+            
+            <h1 className="text-info">Plesae Login</h1>
+            <div className="row my-5">
+                <div className="col col-md-6 col-sm-12">
+                    <form onSubmit={handleSignIn} className="login-design border-2 w-75 mx-auto h-auto pb-5 rounded-3">
                         <div>
-                            <img src={doctor} alt="UserImage" />
-                            <h1 className="text-2xl font-semibold font-mono lg:leading-3 my-3">Please Login</h1>
-                            {user.email?setError(""): <span className="text-red-600">{error}</span> }
+                            <img className="w-75" src={doctor} alt="UserImage" />
+                            <h1 className="fs-2 my-3">Put Your Information</h1>
+                            {user.email?setError(""): <span className="text-danger">{error}</span> }
                         </div>
                         <div>
-                            <input onBlur={handleEmail} className="p-3 lg:w-80 my-3 border-blue-400 border-b-2 text-xl focus:outline-none"  type="email" placeholder="Your Email" />
+                            <input onBlur={handleEmail} className="login-input p-2 w-75 my-2 border-0 border-bottom border-info"  type="email" placeholder="Your Email" />
                         </div>
                         <div>
-                            <input onBlur={handlePassword} className="p-3 lg:w-80 my-3 border-blue-400 border-b-2 text-xl focus:outline-none" type="password" placeholder="Your Password" />
+                            <input onBlur={handlePassword} className="login-input p-2 w-75 my-2 border-0 border-bottom border-info" type="password" placeholder="Your Password" />
                         </div>
                         <div>
-                            <input className="sm:w-80 py-3 px-5 lg:w-80 border-2 border-blue-400 rounded-3xl text-blue-400 bg-transparent hover:bg-blue-400 hover:text-white my-5" type="submit" value="Login"/>
+                            {user.email?history.push('/home'):''}
+                            <input className="p-2 w-75 my-3 fs-5 btn btn-info" type="submit" value="Login"/>
                         </div>
                         <div>
-                            <h4>New User? <Link className="text-blue-400 font-semibold" to="/register">Please Register</Link></h4>
+                            <h4>New User? <Link className=" text-blue-400 font-semibold" to="/register">Please Register</Link></h4>
                         </div>
                     </form>
                 </div>
-                <div className="login-text w-6/12 sm:w-full sm:block">
-                <h3 className="text-3xl leading-3 mt-3">Welcome Back To</h3>
-                <h1 className="text-blue-400 text-4xl font-semibold font-mono mt-8 leading-3 mb-5">AI Care Hospital</h1>
-                    <img src={login} alt="LoginImage" />
+                <div className="col col-md-6 col-sm-12">
+                    <div className="login-text border-2 w-75 mx-auto h-auto py-5 rounded-3">
+                        <h2 className="fs-2 pt-5">Welcome Back To</h2>
+                        <h1 className="text-info">AI Care Hospital</h1>
+                        <h4 className="text-info mb-5">We Care About You</h4>
+                        <img className="w-100" src={login} alt="LoginImage" />
+                    </div>
                 </div>
             </div>
         </div>

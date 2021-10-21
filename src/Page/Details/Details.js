@@ -1,6 +1,7 @@
 import React, {useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
+import './Details.css';
 
 const Details = () => {
     const {serviceId}=useParams();
@@ -9,28 +10,26 @@ const Details = () => {
     fetch('/fakeData.json')
     .then(res=>res.json())
     .then(data=>{
-    const p=data.find(p=>p.id==serviceId)
-    setDetails(p)
-    console.log(p);
+    const singleService=data.find(p=>p.id==serviceId)
+    setDetails(singleService)
     })},[serviceId]);
     return (
         <div>
-            <h1 className="text-blue-400 lg:text-4xl sm:text-3xl font-semibold">Are You Want This Service?</h1>
-            <div className="mt-20 lg:grid lg:grid-cols-2 sm:block sm:w-full container mx-auto">
-           <div>
-               <img src={details.url} alt="" />
-           </div>
-           <div>
-               <h1 className="text-blue-500 text-3xl font-semibold text-left">Service Name: {details.name}</h1>
-               <h1 className="text-blue-400 text-2xl font-semibold text-left">Details About This Service</h1>
-               <h2 className="text-green-600 text-xl font-semibold text-left">Doctor Name: {details.doctor}</h2>
-               <h1>Total Cost: {details.cost}</h1>
-               <p className="text-xl text-left mt-9">{details.description}</p>
-               <button className="text-xl bg-blue-400 px-2 py-2 text-white rounded-md w-40 mr-20 mt-20">Confirm Service</button>
-               <Link to="/home" className="text-xl bg-blue-400 px-2 py-2 text-white rounded-md w-40">Back To Home</Link>
-           </div>
-           
-        </div>
+            <h1 className="text-info mb-5">Are You Want This Service?</h1>
+            <div className="container mx-auto row">
+                <div className="col-md-6 col-sm-12 col-lg-6">
+                    <img className="detailsImage mt-5" src={details.url} alt="" />
+                </div>
+                <div className="col-md-6 col-sm-12 col-lg-6">
+                    <h2 className="text-info text-center mt-5">Service Name: {details.name}</h2>
+                    <h3 className="text-info text-center">Details About This Service</h3>
+                    <h4 className="text-warning text-xl font-semibold text-center">Doctor Name: {details.doctor}</h4>
+                    <h4 className="text-danger">Total Cost: {details.cost}</h4>
+                    <p className="text-secondary text-start w-50 mx-auto">{details.description}</p>
+                    <button className="btn btn-info px-2 py-2 text-white rounded-2 w-40 mt-3 mb-5">Confirm Service</button>
+                    <Link to="/home" className="btn btn-warning px-2 py-2 text-white rounded-2 w-40 mt-3 mb-5 ms-5">Back To Home</Link>
+                </div>           
+            </div>
         </div>
        
     );

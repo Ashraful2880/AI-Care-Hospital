@@ -6,32 +6,32 @@ const Appointment = () => {
     return (
         <div>
             <div className="mt-5">
-                <h1 className="text-blue-400 text-4xl">Want to Appoint?</h1>
-                <h3 className="text-blue-400 text-2xl">Just Drop a Message.</h3>
+                <h1 className="text-info fs-1">Want to Appoint?</h1>
+                <h3 className="text-info fs-3">Just Drop a Message.</h3>
             </div>
-            <div className="lg:flex rounded-3xl lg:mx-40 mt-4 pb-10 shadow-2xl">
-                <div className="lg:w-6/12 md:w-full sm:w-full mt-20 border-r-2 border-blue-300 border-dashed sm:border-0">
-                    <div className="md:w-full sm:w-full lg:w-full">
-                        <input className="py-3 px-5 border-2 rounded-lg lg:w-6/12 text-xl focus:outline-none focus:ring-2 focus:ring-blue-400 mb-5 md:w-full" type="text" placeholder="Your Name"/>
+            <div className="mt-4 pb-5 row container-fluid">
+                <div className="col col-md-6 col-sm-12 mt-5 appoint-input-area">
+                    <div className="col-sm-12 col-md-6 col w-100">
+                        <input className="app-input py-3 px-5 border-0 border-bottom border-2 border-info fs-6 mb-5 w-50" type="text" placeholder="Your Name"/>
                     </div>
-                    <div className="md:w-full sm:w-full lg:w-full">
-                        <input className="py-3 px-5 border-2 rounded-lg lg:w-6/12 text-xl focus:outline-none focus:ring-2 focus:ring-blue-400 mb-5" type="text" placeholder="Doctor Name"/>
+                    <div className="w-100">
+                        <input className="app-input py-3 px-5 border-0 border-bottom border-2 border-info fs-6 mb-5 w-50" type="text" placeholder="Doctor Name"/>
                     </div>
-                    <div className="md:w-full sm:w-full">
-                        <input className="py-3 px-5 border-2 rounded-lg w-6/12 text-xl focus:outline-none focus:ring-2 focus:ring-blue-400 mb-5" type="number" placeholder="Your Contact number"/>
+                    <div className="w-100">
+                        <input className="app-input py-3 px-5 border-0 border-bottom border-2 border-info fs-6 mb-5 w-50" type="number" placeholder="Your Contact number"/>
                     </div>
-                    <div className="md:w-full sm:w-full">
-                        <input className="py-3 px-5 border-2 rounded-lg w-6/12 text-xl focus:outline-none focus:ring-2 focus:ring-blue-400 mb-5" type="date"/>
+                    <div className="w-100">
+                        <input className="app-input py-3 px-5 border-0 border-bottom border-2 border-info fs-6 mb-5 w-50" type="date"/>
                     </div>
-                    <div className="md:w-full sm:w-full">
-                        <textarea className="py-3 px-5 border-2 rounded-lg w-6/12 text-xl focus:outline-none focus:ring-2 focus:ring-blue-400 mb-5" cols="30" rows="6" placeholder="Special Request"></textarea>
+                    <div className="w-100">
+                        <textarea className="app-input py-3 px-5 border-bottom border-info fs-6 mb-5 w-50" cols="30" rows="6" placeholder="Special Request"></textarea>
                     </div>
-                    <div className="md:w-full sm:w-full">
-                        <input className="py-3  border-2 rounded-lg w-2/12 text-xl mb-5 mx-auto border-blue-400 text-white bg-blue-400 hover:bg-white hover:text-blue-500" type="button" value="Book Now" />
+                    <div className="w-100">
+                        <input className="btn btn-info py-3 px-5 border-2 border-info fs-6 mb-5 w-50" type="button" value="Book Now" />
                     </div>
                 </div>
-                <div className="lg:w-6/12 md:w-full sm:w-full">
-                    <img src={mail} alt="AppointImage" />
+                <div className="col-sm-12 col-md-6 col appoint-img">
+                    <img style={{maxWidth:'100%'}} src={mail} alt="AppointImage" />
                 </div>
             </div>
         </div>

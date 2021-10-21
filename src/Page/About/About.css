@@ -1,0 +1,8 @@
+img {
+    max-width: 100%;
+}
+
+.about-img,
+.about-text {
+    box-shadow: 10px 10px 30px grey;
+}
