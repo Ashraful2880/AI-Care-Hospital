@@ -12,6 +12,7 @@ const Register = () => {
     return (
         <div>
             <div className="mt-5 container mx-auto border-2 rounded-3 row">
+                <h1 className="text-center text-info mt-4 my-5">Please Register</h1>
                 <div className="col-lg-6 col-md-12 col-sm-12 reg-text rounded-3 pt-5">
                     <p className="fs-4 text-center pt-3">Health is the first step to prosperity
                     Healthy does not mean expensive.</p>
@@ -21,7 +22,7 @@ const Register = () => {
                 </div>
                 <div className="col-lg-6 col-md-12 col-sm-12 rounded-3 reg-area py-5">
                     <div className="col-md-12 col-sm-12 col-lg-6 w-100">
-                        <h1 className="text-info mb-5">Register For Appoint</h1>
+                        <h2 className="text-info mb-5">Register For Appoint</h2>
                         <form onSubmit={handleRegister}>
                         {user.email?history.push('/home'):''}
                         {user.email?setError(''): <span className="text-warning">{error}</span> }

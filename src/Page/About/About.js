@@ -9,9 +9,9 @@ const About = () => {
     return (
         <div className="pb-5">
             <div className="pt-3">
-                <h1 className="text-info">A Few Words About Us</h1>
+                <h1 className="text-info mt-3">A Few Words About Us</h1>
                 <h2>Who We Are</h2>
-                <img className="mx-auto mb-5" src={shape} alt="" />
+                <img className="mx-auto mb-5 w-50" src={shape} alt="" />
             </div>
             <div className="container-fluid row">
                 <div className="col-sm-12 col-md-12 col-lg-4 mx-auto">
