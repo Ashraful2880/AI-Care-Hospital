@@ -17,8 +17,8 @@ const Details = () => {
         <div>
             <h1 className="text-info mb-5">Are You Want This Service?</h1>
             <div className="container mx-auto row">
-                <div className="col-md-6 col-sm-12 col-lg-6">
-                    <img className="detailsImage mt-5" src={details.url} alt="" />
+                <div className="col-md-12 col-sm-12 col-lg-6">
+                    <img className="detailsImage w-100 mt-5" src={details.url} alt="" />
                 </div>
                 <div className="col-md-6 col-sm-12 col-lg-6">
                     <h2 className="text-info text-center mt-5">Service Name: {details.name}</h2>
