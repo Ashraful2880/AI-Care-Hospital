@@ -14,8 +14,8 @@ const Details = () => {
     setDetails(singleService)
     })},[serviceId]);
     return (
-        <div>
-            <h1 className="text-info mb-5">Are You Want This Service?</h1>
+        <div className="pt-2">
+            <h1 className="text-info mb-5 mt-5">Are You Want This Service?</h1>
             <div className="container mx-auto row">
                 <div className="col-md-12 col-sm-12 col-lg-6">
                     <img className="detailsImage w-100 mt-5" src={details.url} alt="" />
