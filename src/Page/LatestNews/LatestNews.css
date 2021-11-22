@@ -4,5 +4,9 @@
     background-attachment: fixed;
     background-position: top;
     height: auto;
-    padding: 200px 0;
+    padding: 150px 0;
+}
+.doctor-profile{
+    width: 40px;
+    height: 40px;
 }

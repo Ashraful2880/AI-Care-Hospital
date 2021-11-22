@@ -3,7 +3,7 @@
     background-size: cover;
     background-attachment: fixed;
     background-position: top;
-    height: 90vh;
+    height: 95vh;
 }
 
 .text-area {
@@ -14,6 +14,9 @@
 }
 
 .header-text {
-    font-size: 55px;
-    line-height: 45px;
+    font-size: 65px;
+    line-height: 55px;
+}
+.sub-header{
+    font-size: 40px;
 }

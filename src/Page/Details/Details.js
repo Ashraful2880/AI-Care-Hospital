@@ -14,24 +14,21 @@ const Details = () => {
     setDetails(singleService)
     })},[serviceId]);
     return (
-        <div className="pt-2">
-            <h1 className="text-info mb-5 mt-5">Are You Want This Service?</h1>
-            <div className="container mx-auto row">
-                <div className="col-md-12 col-sm-12 col-lg-6">
-                    <img className="detailsImage w-100 mt-5" src={details.url} alt="" />
-                </div>
-                <div className="col-md-6 col-sm-12 col-lg-6">
-                    <h2 className="text-info text-center mt-5">Service Name: {details.name}</h2>
-                    <h3 className="text-info text-center">Details About This Service</h3>
-                    <h4 className="text-warning text-xl font-semibold text-center">Doctor Name: {details.doctor}</h4>
-                    <h4 className="text-danger">Total Cost: {details.cost}</h4>
-                    <p className="text-secondary text-start w-75 mx-auto">{details.description}</p>
-                    <button className="btn btn-info px-2 py-2 text-white rounded-2 w-40 mt-3 mb-5">Confirm Service</button>
-                    <Link to="/home" className="btn btn-warning px-2 py-2 text-white rounded-2 w-40 mt-3 mb-5 ms-5">Back To Home</Link>
-                </div>           
+        <div className="container mx-auto row mt-5">
+            <h2 className="text-info mb-5 mt-5">Are You Want This Service?</h2>
+            <div className="col-md-12 col-sm-12 col-lg-6">
+                <img className="detailsImage w-100 my-5 rounded-3" src={details.url} alt="" />
             </div>
+            <div className="col-md-6 col-sm-12 col-lg-6 text-start px-5">
+                <h3 className="text-info my-5">Details Of {details?.name}</h3>
+                <h3>Service Name: <span className="text-info">{details.name}</span></h3>
+                <h4 className="text-warning text-xl font-semibold">Doctor Name: {details.doctor}</h4>
+                <h4 className="text-danger">Total Cost: {details.cost}$</h4>
+                <p className="text-secondary text-start mx-auto">{details.description}</p>
+                <button className="btn btn-info px-2 py-2 text-white rounded-2 w-40 mt-3 mb-5">Confirm Service</button>
+                <Link to="/home" className="btn btn-warning px-2 py-2 text-white rounded-2 w-40 mt-3 mb-5 ms-5">Back To Home</Link>
+            </div>           
         </div>
-       
     );
 };
 

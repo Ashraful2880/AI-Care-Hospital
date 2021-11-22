@@ -1,3 +1,9 @@
+.nav-bg{
+    background-image: linear-gradient(#0176a8,#43aedb);
+}
+.logo{
+    width: 50px;
+}
 .user-image {
     width: 30px;
     height: 30px;

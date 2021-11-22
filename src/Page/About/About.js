@@ -1,5 +1,4 @@
 import React from 'react';
-import shape from '../../Image/line.png';
 import about from '../../Image/about .png';
 import exper from '../../Image/exp-doc.png';
 import covid from '../../Image/covid.png'
@@ -7,60 +6,51 @@ import './About.css';
 
 const About = () => {
     return (
-        <div className="pb-5">
-            <div className="pt-3">
-                <h1 className="text-info mt-3">A Few Words About Us</h1>
-                <h2>Who We Are</h2>
-                <img className="mx-auto mb-5 w-50" src={shape} alt="" />
-            </div>
-            <div className="container-fluid row">
-                <div className="col-sm-12 col-md-12 col-lg-4 mx-auto">
-                    <img className="about-img w-100" src={about} alt="aboutImage" />
+        <div className="py-5 container mx-auto">
+            <h2 className="text-info mt-5 fw-bold">A Few Words About Us</h2>
+            <h2 className="pb-5">Who We Are</h2>
+            <div className="row">
+                <div className="col-sm-12 col-md-12 col-lg-6 mx-auto">
+                    <img className="w-100 rounded-3" src={about} alt="aboutImage" />
                 </div>
-                <div className=" col-sm-12 col-md-12 col-lg-6 about-text py-3  rounded-3 px-4">
-                    <h1 className="mb-5 text-info">Special Operation Theater</h1>
-                    <p className="mb-3 fs-5 text-secondary text-start">
+                <div className="col-sm-12 col-md-12 col-lg-6 about-text py-3 rounded-3 px-5 text-start">
+                    <h3 className="fw-bold mt-3">Special Operation Theater</h3>
+                    <h5 className="mt-3 mb-4">A GREAT PLACE TO WORK. A GREAT PLACE TO RECEIVE CARE. LEADING MEDICINE.</h5>
+                    <p className="mb-2 text-secondary">
                         Getting a new patient to actually walk through the door can mean the difference between a long-term relationship or no relationship at all. When a person doesn’t show up for their initial meeting with a doctor, the likelihood that they’ll reschedule it is low
                     </p>
-                    <p className="mb-3 fs-5 text-secondary text-start">
+                    <p className="text-secondary">
                         They might be embarrassed about forgetting the appointment or   just feel hesitant about seeing a doctor. Sending a reminder  text that also puts the patient at ease can increase the odds    that they keep their appointment. 
-                    </p>
-                    <p className="mb-3 fs-5 text-secondary text-start">
-                        Reminder texts can also help existing patients stay engaged so  they’re more likely to keep their commitment. Messages can be    used for actually scheduling their appointment, as the text    conversation below illustrates
                     </p>
                 </div>
             </div>
-            <div className="container-fluid row mt-5">
-                <div className=" col-sm-12 col-md-6 col-lg-6 about-text py-3 px-5 rounded-3">
-                    <h1 className="mb-5 text-info">Experienced Doctor </h1>
-                    <p className="mb-3 fs-5 text-secondary text-start">
+            <div className="row mt-5">
+                <div className="col-sm-12 col-md-12 col-lg-6 about-text py-3 rounded-3 px-5 text-start">
+                    <h3 className="fw-bold mt-3">Experienced Doctor </h3>
+                    <h5 className="mt-3 mb-4">A GREAT PLACE TO WORK. A GREAT PLACE TO RECEIVE CARE. LEADING MEDICINE.</h5>
+                    <p className="mb-3 text-secondary text-start">
                         Getting a new patient to actually walk through the door can mean the difference between a long-term relationship or no relationship at all. When a person doesn’t show up for their initial meeting with a doctor, the likelihood that they’ll reschedule it is low
                     </p>
-                    <p className="mb-3 fs-5 text-secondary text-start">
+                    <p className="mb-3 text-secondary text-start">
                         They might be embarrassed about forgetting the appointment or   just feel hesitant about seeing a doctor. Sending a reminder  text that also puts the patient at ease can increase the odds    that they keep their appointment. 
                     </p>
-                    <p className="mb-3 fs-5 text-secondary text-start">
-                        Reminder texts can also help existing patients stay engaged so  they’re more likely to keep their commitment. Messages can be    used for actually scheduling their appointment, as the text    conversation below illustrates
-                    </p>
                 </div>
-                <div className="col-sm-12 col-md-12 col-lg-4 mx-auto">
-                    <img className="about-img w-100" src={exper} alt="aboutImage" />
+                <div className="col-sm-12 col-md-12 col-lg-6 mx-auto">
+                    <img className="w-100 rounded-3" src={exper} alt="aboutImage" />
                 </div>
             </div>
-            <div className="container-fluid row mt-5">
-                <div className="col-sm-12 col-md-12 col-lg-4 mx-auto">
-                    <img className="about-img w-100" src={covid} alt="aboutImage" />
+            <div className="row mt-5">
+                <div className="col-sm-12 col-md-12 col-lg-6 mx-auto">
+                    <img className="w-100 rounded-3" src={covid} alt="aboutImage" />
                 </div>
-                <div className=" col-sm-12 col-md-12 col-lg-6 about-text py-3 rounded-3">
-                    <h1 className="mb-5 text-info">Covid-19 Special Unit</h1>
-                    <p className="mb-3 fs-5 text-secondary text-start">
+                <div className="col-sm-12 col-md-12 col-lg-6 about-text py-3 rounded-3 px-5 text-start">
+                    <h3 className="fw-bold mt-3">Covid-19 Special Unit</h3>
+                    <h5 className="mt-3 mb-4">A GREAT PLACE TO WORK. A GREAT PLACE TO RECEIVE CARE. LEADING MEDICINE.</h5>
+                    <p className="mb-3 text-secondary text-start">
                         Getting a new patient to actually walk through the door can mean the difference between a long-term relationship or no relationship at all. When a person doesn’t show up for their initial meeting with a doctor, the likelihood that they’ll reschedule it is low
                     </p>
-                    <p className="mb-3 fs-5 text-secondary text-start">
+                    <p className="mb-3 text-secondary text-start">
                         They might be embarrassed about forgetting the appointment or   just feel hesitant about seeing a doctor. Sending a reminder  text that also puts the patient at ease can increase the odds    that they keep their appointment. 
-                    </p>
-                    <p className="mb-3 fs-5 text-secondary text-start">
-                        Reminder texts can also help existing patients stay engaged so  they’re more likely to keep their commitment. Messages can be    used for actually scheduling their appointment, as the text    conversation below illustrates
                     </p>
                 </div>
             </div>
