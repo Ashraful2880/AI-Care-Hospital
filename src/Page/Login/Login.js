@@ -4,14 +4,16 @@ import login from '../../Image/login.png';
 import doctor from '../../Image/doctor.png'
 import { Link , useHistory} from 'react-router-dom';
 import useAuth from '../../Hooks/UseAuth';
-const Login = () => {
+import Slide from 'react-reveal/Slide';
 
+const Login = () => {
     const{handleSignIn,handleEmail,handlePassword,user,error,setError}=useAuth();
     let history=useHistory();
     return (
         <div className="container pt-5">
             <h2 className="text-info pt-5">Plesae Login</h2>
             <div className="row my-5">
+            <Slide left>
                 <div className="col-lg-6 col-md-12 col-sm-12">
                     <form onSubmit={handleSignIn} className="login-design w-100 mx-auto h-auto pb-4 rounded-3">
                         <div>
@@ -34,6 +36,8 @@ const Login = () => {
                         </div>
                     </form>
                 </div>
+                </Slide>
+                <Slide right>
                 <div className="col-lg-6 col-md-12 col-sm-12">
                     <div className="login-text border-2 w-100 mx-auto h-auto pb-5 rounded-3">
                         <h2 className="fs-2 pt-5 fw-bold" style={{fontFamily:'cursive'}}>Welcome Back To</h2>
@@ -42,6 +46,7 @@ const Login = () => {
                         <img className="w-100" src={login} alt="LoginImage" />
                     </div>
                 </div>
+            </Slide>
             </div>
         </div>
     );

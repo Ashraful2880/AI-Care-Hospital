@@ -2,11 +2,16 @@ import React from 'react';
 import doctor1 from '../../Image/doctor1.png';
 import doctor2 from '../../Image/doctor2.png';
 import './BestDoctor.css';
+import Slide from 'react-reveal/Slide';
+import Zoom from 'react-reveal/Zoom';
 
 const BestDoctor = () => {
     return (
         <div>
+            <Slide left>
             <h2 className="text-info mb-5 mt-4 fw-bold">Our Top Doctors</h2>
+            </Slide>
+            <Zoom>
             <div className="row container mx-auto mb-5 text-start">
                 <div className="col-lg-3 col-sm-12 col-md-6 doc-container rounded-3 mx-auto single-doctor">
                     <img className="doctor-image pb-3 w-100" src={doctor1} alt="doctor" />
@@ -60,6 +65,7 @@ const BestDoctor = () => {
                     </div>
                 </div>
             </div>
+            </Zoom>
         </div>
     );
 };

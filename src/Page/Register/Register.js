@@ -5,12 +5,14 @@ import registerImage from '../../Image/register.png';
 import google from '../../Image/google.png';
 import github from '../../Image/gtihub.png';
 import useAuth from '../../Hooks/UseAuth';
+import Zoom from 'react-reveal/Zoom';
 
 const Register = () => {
     const{handleRegister,handleName,handleEmail,handlePassword,googleSignIn,gitHubSignIn,error,user,setError}=useAuth();
     let history=useHistory();
     return (
         <div className="mt-5 container mx-auto border-2 rounded-3 row">
+            <Zoom>
             <h2 className="text-center text-info my-5">Please Register</h2>
             <div className="col-lg-6 col-md-12 col-sm-12 rounded-3 pt-4">
                 <h1 className="text-start">AI Care Hospital</h1>
@@ -56,6 +58,7 @@ const Register = () => {
                     </form>
                 </div>
             </div>
+            </Zoom>
         </div>
     );
 };

@@ -1,10 +1,12 @@
 import React from 'react';
 import mail from '../../Image/contact.png';
 import './Appointment.css';
+import Rotate from 'react-reveal/Rotate';
 
 const Appointment = () => {
     return (
         <>
+        <Rotate bottom right>
             <div className="mt-5">
                 <h2 className="text-info pt-5 fw-bold">Want to Appoint?</h2>
                 <h4 className="text-info">Confirm Your Appointment</h4>
@@ -34,6 +36,7 @@ const Appointment = () => {
                     <img style={{maxWidth:'100%'}} src={mail} alt="AppointImage" />
                 </div>
             </div>
+            </Rotate>
         </>
     );
 };
